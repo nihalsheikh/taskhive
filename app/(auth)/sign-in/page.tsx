@@ -4,7 +4,7 @@ import { SignInForm } from "@/components/forms";
 
 const SignIn = () => {
 	return (
-		<main className="flex flex-row justify-between grid-col-2">
+		<main className="grid grid-cols-2 gap-4">
 			{/* Sign-In Form */}
 			<div className="w-full h-full">
 				<SignInForm />

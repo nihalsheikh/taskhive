@@ -1,7 +1,11 @@
-import React from "react";
+import App from "@/components/App";
 
 const Home = () => {
-	return <div>(root) Home</div>;
+	return (
+		<div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+			<App />
+		</div>
+	);
 };
 
 export default Home;
