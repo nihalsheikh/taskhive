@@ -138,7 +138,7 @@ export default function PricingCarousel() {
 													}
 												/>
 											) : (
-												<div className="absolute inset-0 bg-linear-to-tr from-zinc-900/60 to-zinc-800/40" />
+												<div className="absolute inset-0 bg-gradient-to-tr from-zinc-900/60 to-zinc-800/40" />
 											)}
 
 											{/* Inner content card — centered via parent flex */}
@@ -216,7 +216,7 @@ export default function PricingCarousel() {
 										{/* Badge */}
 										{plan.recommended && (
 											<div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-4 z-20">
-												<div className="px-4 py-1 rounded-full bg-linear-to-r from-cyan-400 to-violet-500 text-xs font-bold text-black">
+												<div className="px-4 py-1 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 text-xs font-bold text-black">
 													MOST POPULAR
 												</div>
 											</div>
@@ -245,7 +245,7 @@ export default function PricingCarousel() {
 								onClick={() => setIndex(i)}
 								className={`h-2 w-8 rounded-full transition ${
 									i === index
-										? "bg-linear-to-r from-cyan-400 to-violet-500"
+										? "bg-gradient-to-r from-cyan-400 to-violet-500"
 										: "bg-white/10"
 								}`}
 							/>

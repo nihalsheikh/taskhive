@@ -1,11 +1,33 @@
-export const envConf = {
+// Server Side Configs
+export const serverEnvConf = {
 	// Prisma Postgres DB
-	prismaDbURl: process.env.DATABASE_URL!,
-	// Spline Scene
-	splineSceneUrl: process.env.NEXT_PUBLIC_SPLINE_SCENE_URL!,
-	// Social Media
-	twitterUrl: process.env.NEXT_PUBLIC_TWITTER_URL!,
-	linkedInUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL!,
-	peerlistUrl: process.env.NEXT_PUBLIC_PEERLIST_URL!,
-	githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL!,
+	prismaDbURl: process.env.DATABASE_URL ?? "",
 };
+
+if (!serverEnvConf.prismaDbURl)
+	throw new Error("Missing required environment variable: DATABASE_URL");
+
+// Client Side Configs
+export const envConf = {
+	// Spline Scene
+	splineSceneUrl: process.env.NEXT_PUBLIC_SPLINE_SCENE_URL ?? "",
+	// Social Media
+	twitterUrl: process.env.NEXT_PUBLIC_TWITTER_URL ?? "",
+	linkedInUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "",
+	peerlistUrl: process.env.NEXT_PUBLIC_PEERLIST_URL ?? "",
+	githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL ?? "",
+};
+
+const requiredEnvVars = {
+	NEXT_PUBLIC_SPLINE_SCENE_URL: envConf.splineSceneUrl,
+	NEXT_PUBLIC_TWITTER_URL: envConf.twitterUrl,
+	NEXT_PUBLIC_LINKEDIN_URL: envConf.linkedInUrl,
+	NEXT_PUBLIC_PEERLIST_URL: envConf.peerlistUrl,
+	NEXT_PUBLIC_GITHUB_URL: envConf.githubUrl,
+};
+
+for (const [key, value] of Object.entries(requiredEnvVars)) {
+	if (!value) {
+		throw new Error(`Missing required environment variable: ${key}`);
+	}
+}

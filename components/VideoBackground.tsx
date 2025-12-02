@@ -1,26 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-
-interface Props {
-	src: string;
-	backgroundVideo?: string;
-	className?: string;
-	type?: string; // e.g. "video/webm" or "video/mp4"
-	muted?: boolean;
-	loop?: boolean;
-	preload?: "auto" | "metadata" | "none";
-}
+import { VideoBackgroundProps } from "@/types";
+import { useEffect, useRef } from "react";
 
 export default function VideoBackground({
 	src,
-	backgroundVideo,
+	poster,
 	className,
 	type = "video/webm",
 	muted = true,
 	loop = true,
 	preload = "metadata",
-}: Props) {
+}: VideoBackgroundProps) {
 	const ref = useRef<HTMLVideoElement | null>(null);
 
 	useEffect(() => {
@@ -62,7 +53,7 @@ export default function VideoBackground({
 			className={`absolute inset-0 z-0 overflow-hidden ${
 				className ?? ""
 			}`}
-			aria-hidden
+			aria-hidden="true"
 		>
 			<video
 				ref={ref}
@@ -70,7 +61,7 @@ export default function VideoBackground({
 				muted={muted}
 				playsInline
 				preload={preload}
-				poster={backgroundVideo}
+				poster={poster}
 				role="presentation"
 				// Center the video and oversize it so glow is balanced around edges.
 				style={{

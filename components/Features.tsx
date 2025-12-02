@@ -1,4 +1,3 @@
-import React from "react";
 import {
 	Workflow,
 	Zap,
@@ -125,7 +124,10 @@ const Features: React.FC = () => {
 							</p>
 						</div>
 						<div className="hidden md:block w-1/3 h-full">
-							<div className="w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.05)_50%,transparent_75%,transparent_100%)] bg-size-[20px_20px]"></div>
+							<div
+								className="w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.05)_50%,transparent_75%,transparent_100%)]"
+								style={{ backgroundSize: "20px 20px" }}
+							></div>
 						</div>
 					</div>
 				</div>

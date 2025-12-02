@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const CTA: React.FC = () => {
 	return (
@@ -17,13 +18,19 @@ const CTA: React.FC = () => {
 				</p>
 
 				<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-					<button className="w-full sm:w-auto px-8 py-4 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+					<Link
+						href="/sign-up"
+						className="w-full sm:w-auto px-8 py-4 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+					>
 						Get Started Free
 						<ArrowRight size={18} />
-					</button>
-					<button className="w-full sm:w-auto px-8 py-4 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-900 dark:text-zinc-100 font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
+					</Link>
+					<Link
+						href="/pricing"
+						className="w-full sm:w-auto px-8 py-4 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-900 dark:text-zinc-100 font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+					>
 						Contact Sales
-					</button>
+					</Link>
 				</div>
 
 				<p className="mt-6 text-sm text-zinc-400 dark:text-zinc-600">

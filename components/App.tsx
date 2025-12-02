@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
 	return (
 		<div className=" bg-zinc-50 dark:bg-zinc-950 font-sans selection:bg-zinc-200 dark:selection:bg-zinc-800">
-			<ThemeWrapper>
+			<ThemeWrapper theme={isDark ? "dark" : "light"}>
 				<Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
 				<main>
