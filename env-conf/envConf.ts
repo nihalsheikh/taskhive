@@ -1,14 +1,7 @@
-// Server Side Configs
-export const serverEnvConf = {
-	// Prisma Postgres DB
-	prismaDbURl: process.env.DATABASE_URL ?? "",
-};
-
-if (!serverEnvConf.prismaDbURl)
-	throw new Error("Missing required environment variable: DATABASE_URL");
-
 // Client Side Configs
 export const envConf = {
+	// Prisma Postgres DB
+	prismaDbURl: process.env.DATABASE_URL!,
 	// Spline Scene
 	splineSceneUrl: process.env.NEXT_PUBLIC_SPLINE_SCENE_URL!,
 	// Social Media
