@@ -10,12 +10,12 @@ if (!serverEnvConf.prismaDbURl)
 // Client Side Configs
 export const envConf = {
 	// Spline Scene
-	splineSceneUrl: process.env.NEXT_PUBLIC_SPLINE_SCENE_URL ?? "",
+	splineSceneUrl: process.env.NEXT_PUBLIC_SPLINE_SCENE_URL!,
 	// Social Media
-	twitterUrl: process.env.NEXT_PUBLIC_TWITTER_URL ?? "",
-	linkedInUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "",
-	peerlistUrl: process.env.NEXT_PUBLIC_PEERLIST_URL ?? "",
-	githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL ?? "",
+	twitterUrl: process.env.NEXT_PUBLIC_TWITTER_URL!,
+	linkedInUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL!,
+	peerlistUrl: process.env.NEXT_PUBLIC_PEERLIST_URL!,
+	githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL!,
 };
 
 const requiredEnvVars = {
@@ -27,7 +27,6 @@ const requiredEnvVars = {
 };
 
 for (const [key, value] of Object.entries(requiredEnvVars)) {
-	if (!value) {
+	if (value === undefined)
 		throw new Error(`Missing required environment variable: ${key}`);
-	}
 }

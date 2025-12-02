@@ -66,10 +66,7 @@ export default function PricingCarousel() {
 	}, [next, prev]);
 
 	return (
-		<section
-			id="pricing"
-			className="pt-24 pb-28 md:pt-28 md:pb-36 bg-transparent"
-		>
+		<section className="pt-24 pb-28 md:pt-28 md:pb-36 bg-transparent">
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="relative">
 					<div
@@ -132,9 +129,8 @@ export default function PricingCarousel() {
 															: "video/mp4"
 													}
 													className=""
-													backgroundVideo={
-														plan.backgroundVideo ??
-														undefined
+													poster={
+														plan.backgroundVideo
 													}
 												/>
 											) : (
