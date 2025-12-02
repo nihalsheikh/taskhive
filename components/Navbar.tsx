@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { navbarLinks } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavbarProps {
 	isDark: boolean;
@@ -44,19 +45,19 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 				<div className="hidden md:flex items-center gap-8">
 					{navbarLinks.map((item) => (
 						<a
-							key={item.label}
+							key={item.id}
 							href={item.href}
 							className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
 						>
 							{item.label}
 						</a>
 					))}
-					<a
-						href="sign-in"
+					<Link
+						href="/sign-in"
 						className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
 					>
 						Sign In
-					</a>
+					</Link>
 				</div>
 
 				{/* Actions */}
@@ -68,12 +69,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 					>
 						{isDark ? <Sun size={20} /> : <Moon size={20} />}
 					</button>
-					<a
-						href="sign-up"
+					<Link
+						href="/sign-up"
 						className="px-5 py-2.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-semibold hover:opacity-80 transition-opacity"
 					>
 						Get Started Free
-					</a>
+					</Link>
 				</div>
 
 				{/* Mobile Menu Button */}
@@ -102,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 				<div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5 shadow-xl">
 					{navbarLinks.map((item) => (
 						<a
-							key={item.label}
+							key={item.id}
 							href={item.href}
 							className="text-lg font-medium text-zinc-900 dark:text-zinc-100"
 							onClick={() => setIsMobileMenuOpen(false)}
@@ -110,21 +111,21 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 							{item.label}
 						</a>
 					))}
-					<a
-						href="sign-in"
+					<Link
+						href="/sign-in"
 						className="text-lg font-medium text-zinc-900 dark:text-zinc-100"
 						onClick={() => setIsMobileMenuOpen(false)}
 					>
 						Sign In
-					</a>
+					</Link>
 					<div className="h-px bg-zinc-200 dark:bg-zinc-800 my-2" />
-					<a
-						href="sign-up"
+					<Link
+						href="/sign-up"
 						onClick={() => setIsMobileMenuOpen(false)}
 						className="w-full py-3 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-center font-semibold"
 					>
 						Get Started Free
-					</a>
+					</Link>
 				</div>
 			)}
 		</nav>

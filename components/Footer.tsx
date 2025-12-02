@@ -4,15 +4,16 @@ import { Separator } from "@/components/ui/separator";
 import { footerLinks } from "@/constants";
 import { envConf } from "@/env-conf/envConf";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { ReactElement, useState } from "react";
 
-export const Peerlist = (props: { className: string }) => (
+export const Peerlist = ({ className }: { className: string }) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width={24}
 		height={24}
 		viewBox="0 0 24 24"
+		className={className}
 	>
 		<path
 			fill="currentColor"
@@ -22,10 +23,18 @@ export const Peerlist = (props: { className: string }) => (
 );
 
 const Footer = () => {
+	const [email, setEmail] = useState("");
+
+	const handleSubscribe = (e: React.FormEvent) => {
+		e.preventDefault();
+		// TODO: To be implemented: Subscibe email logic, Email Forwarding
+		console.log("Subscribed by email: ", email);
+	};
+
 	return (
 		<div className="flex flex-col">
 			<footer className="border-t">
-				<div className="max-w-(--breakpoint-xl) mx-auto">
+				<div className="max-w-7xl mx-auto">
 					<div className="py-12 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">
 						<div>
 							{/* Logo */}
@@ -56,12 +65,18 @@ const Footer = () => {
 						{/* Subscribe Newsletter */}
 						<div className="max-w-xs w-full">
 							<h6 className="font-medium">Stay up to date</h6>
-							<form className="mt-6 flex items-center gap-2">
+							<form
+								onSubmit={handleSubscribe}
+								className="mt-6 flex items-center gap-2"
+							>
 								<Input
 									type="email"
 									placeholder="Enter your email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									required
 								/>
-								<Button>Subscribe</Button>
+								<Button type="submit">Subscribe</Button>
 							</form>
 						</div>
 					</div>

@@ -1,18 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ThemeWrapperProps } from "@/types";
 
-export default function ThemeWrapper({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
-	const [theme, setTheme] = useState("light");
-
-	useEffect(() => {
-		const saved = localStorage.getItem("theme");
-		if (saved) setTheme(saved);
-	}, []);
-
+export default function ThemeWrapper({ theme, children }: ThemeWrapperProps) {
 	return <div data-theme={theme}>{children}</div>;
 }

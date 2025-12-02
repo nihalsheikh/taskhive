@@ -1,4 +1,10 @@
 import { LucideIcon } from "lucide-react";
+import React from "react";
+
+export interface ThemeWrapperProps {
+	theme: "light" | "dark" | "system";
+	children: React.ReactNode;
+}
 
 export interface NavbarLinks {
 	id: string;
@@ -32,4 +38,14 @@ export interface FooterLinks {
 	id: string;
 	title: string;
 	href: string;
+}
+
+export interface VideoBackgroundProps {
+	src: string;
+	poster?: string;
+	className?: string;
+	type?: string; // e.g. "video/webm" or "video/mp4"
+	muted?: boolean;
+	loop?: boolean;
+	preload?: "auto" | "metadata" | "none";
 }
