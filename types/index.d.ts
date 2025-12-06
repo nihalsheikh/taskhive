@@ -19,10 +19,9 @@ export interface Feature {
 }
 
 export interface Testimonials {
+	text: string;
 	name: string;
 	role: string;
-	content: string;
-	avatar: string;
 }
 
 export interface PricingPlan {

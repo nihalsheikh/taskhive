@@ -1,11 +1,16 @@
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import Orb from "./Orb";
-import Features from "./Features";
-import Testimonials from "./Testimonials";
-import CTA from "./CTA";
-import Pricing from "./Pricing";
-import Footer from "./Footer";
-import App from "./App";
+import BentoItem from "./BentoItem";
+import GridBackground from "./Grid";
+import { BorderBeam, GlowingBorder } from "./BorderBeam";
+import HeroCard from "./HeroCard";
+import PricingCard from "./PricingCard";
+import TestimonialMarquee from "./TestimonialMarquee";
 
-export { Navbar, Hero, Orb, Features, Testimonials, CTA, Pricing, Footer, App };
+export {
+	BentoItem,
+	GridBackground,
+	BorderBeam,
+	GlowingBorder,
+	HeroCard,
+	PricingCard,
+	TestimonialMarquee,
+};
