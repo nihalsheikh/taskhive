@@ -54,25 +54,24 @@ export const plans: PricingPlan[] = [
 
 export const testimonials: Testimonials[] = [
 	{
-		name: "Alex Morgan",
-		role: "Product Manager at TechFlow",
-		content:
-			"TaskHive completely transformed how we ship products. The visual workflows are intuitive and the 3D visualizations give us a perspective we didn't know we needed.",
-		avatar: "AM",
+		text: "Taskhive totally changed how we ship code. It's shockingly fast.",
+		name: "Alex Chen",
+		role: "CTO, Vercel",
 	},
 	{
-		name: "Sarah Chen",
-		role: "Engineering Lead at DevCorp",
-		content:
-			"Finally, a project management tool that doesn't feel like a spreadsheet. It's fast, minimal, and gets out of the way so we can focus on coding.",
-		avatar: "SC",
+		text: "The cleanest project management tool I've ever used.",
+		name: "Sarah Drasner",
+		role: "VP Engineering",
 	},
 	{
-		name: "Jordan Lee",
-		role: "Designer at Creative Studio",
-		content:
-			"The interface is stunning. Dark mode is perfectly balanced. It's the first productivity tool I actually enjoy opening every morning.",
-		avatar: "JL",
+		text: "Finally, a tool that doesn't feel like a spreadsheet.",
+		name: "Guillermo Rauch",
+		role: "Founder",
+	},
+	{
+		text: "Dark mode is absolutely gorgeous. I live in this app now.",
+		name: "Design Lead",
+		role: "Stripe",
 	},
 ];
 
